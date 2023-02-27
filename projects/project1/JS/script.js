@@ -6,6 +6,7 @@ function getRandomInt(max) {
 
 let randomNumber = getRandomInt(20);
 let score = 20;
+let highscore = 0;
 
 document.querySelector(".check").addEventListener("click", function () {
   const guess = document.querySelector(".guess").value;
@@ -15,6 +16,10 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector("body").style.background = "green";
     document.querySelector(".number").textContent = `${randomNumber}`;
     document.querySelector("h1").textContent = `YOU GUESSED!`;
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector(".highscore").textContent = highscore;
+    }
   } else if (guess > randomNumber) {
     if (score > 1) {
       document.querySelector(".message").textContent = "Too High!";
@@ -46,4 +51,5 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector(".number").textContent = `?`;
   document.querySelector(".guess").value = "";
   document.querySelector("body").style.background = "salmon";
+  highscore = Number(document.querySelector(".highscore").textContent);
 });
