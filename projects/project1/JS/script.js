@@ -51,5 +51,5 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector(".number").textContent = `?`;
   document.querySelector(".guess").value = "";
   document.querySelector("body").style.background = "salmon";
-  highscore = Number(document.querySelector(".highscore").textContent);
+  document.querySelector("h1").textContent = `Guess My Number!`;
 });
